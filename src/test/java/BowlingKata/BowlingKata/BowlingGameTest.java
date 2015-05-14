@@ -22,7 +22,15 @@ public class BowlingGameTest{
 		assertThat( g.score() , is(20) );
 	}
 	
-	
+	@Test
+	public void gameWithOneSpare() {
+		Game g = new Game();
+		g.roll(5);
+		g.roll(5); 
+		g.roll(3);
+		rollAFewTimes(g,0,17);
+		assertThat(g.score(), is(16));
+	}
 	
 	public void rollAFewTimes(Game game, int points,int ilosc){
 		for(int i =0; i<ilosc; i++){
