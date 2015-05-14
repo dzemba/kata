@@ -15,6 +15,14 @@ public class BowlingGameTest{
 		assertThat( g.score() , is(0) );
 	}
 	
+	@Test
+ 	public void gameWithout20Points() {
+		Game g = new Game();
+		rollAFewTimes(g,1);
+		assertThat( g.score() , is(20) );
+	}
+	
+	
 	
 	public void rollAFewTimes(Game game, int points){
 		for(int i =0; i<20; i++){
