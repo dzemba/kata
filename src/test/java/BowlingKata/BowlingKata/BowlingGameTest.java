@@ -11,23 +11,22 @@ public class BowlingGameTest{
 	@Test
  	public void gameWithoutPoints() {
 		Game g = new Game();
-		rollAFewTimes(g,0);
+		rollAFewTimes(g,0,20);
 		assertThat( g.score() , is(0) );
 	}
 	
 	@Test
  	public void gameWithout20Points() {
 		Game g = new Game();
-		rollAFewTimes(g,1);
+		rollAFewTimes(g,1,20);
 		assertThat( g.score() , is(20) );
 	}
 	
 	
 	
-	public void rollAFewTimes(Game game, int points){
-		for(int i =0; i<20; i++){
+	public void rollAFewTimes(Game game, int points,int ilosc){
+		for(int i =0; i<ilosc; i++){
 			game.roll(points);
-		
 		}
 	}
 } 
