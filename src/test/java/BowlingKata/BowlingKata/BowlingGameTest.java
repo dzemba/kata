@@ -32,6 +32,16 @@ public class BowlingGameTest{
 		assertThat(g.score(), is(16));
 	}
 	
+	@Test
+	public void gameWithOneStrike() {
+		Game g = new Game();
+		g.roll(10); //strike
+		g.roll(3); 
+		g.roll(4);
+		rollAFewTimes(g,0,16);
+		assertThat(g.score(), is(24));
+	}
+	
 	public void rollAFewTimes(Game game, int points,int ilosc){
 		for(int i =0; i<ilosc; i++){
 			game.roll(points);
